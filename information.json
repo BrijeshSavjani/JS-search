@@ -1,0 +1,10 @@
+{
+    "items":
+    [
+        {"Name": "Name1", "Attribute1": "Attribute1_Value", "Attribute2": "Attribute2_Value"},
+        {"Name": "Name2", "Attribute1": "Attribute1_Value", "Attribute2": "Attribute2_Value"},
+        {"Name": "Name3", "Attribute1": "Attribute1_Value", "Attribute2": "Attribute2_Value"},
+        {"Name": "Name4", "Attribute1": "Attribute1_Value", "Attribute2": "Attribute2_Value"},
+        {"Name": "Name5", "Attribute1": "Attribute1_Value", "Attribute2": "Attribute2_Value"}
+    ]
+}
