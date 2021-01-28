@@ -2,6 +2,8 @@
 <head>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<script src="Search.JS"></script>
+<script type="text/javascript" src="information.json"></script>
 <title>Search Bar</title>
 </head>
 
@@ -13,17 +15,17 @@
 
 <input  id = "Searchbar" style = "margin:16px;"></input>
 
-<select name = "Attribute2" style = "margin:16px;">
+<select id = "Attribute2" style = "margin:16px;">
     <option value = "Attribute2_Value1">A2 V1</option>
     <option value = "Attribute2_Value2">A2 V2</option>
     <option value = "Attribute2_Value3">A2 V3</option>
     <option value = "Attribute2_Value4">A2 V4</option>
 </select>
 
-<input type="checkbox" class = "Attrib3" name = "Attrib_3" style = "margin:16px;">
-<label for = "Attrib_3" style = "margin:8px;">Attribute 3</label>
+<input type="checkbox" class = "Attribute3" id = "Attribute3" style = "margin:16px;">
+<label for = "Attribute3" style = "margin:8px;">Attribute 3</label>
 </br>
-<button>Search</button>
+<button onclick = "Search()">Search</button>
 </div>
 
 </body>
