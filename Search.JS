@@ -29,7 +29,14 @@ function Search ()
     {
       if (data[i].Name.includes(name,0))
       {
-        if(data[i].Attribute2 == attrib2){if (attrib3 == data[i].Attribute3){accepted_properties.push(data[i]);}}
+        if (attrib3 == data[i].Attribute3)
+        {
+          if (attrib2 = "All"){accepted_properties.push(data[i]);}
+          if(data[i].Attribute2 == attrib2) 
+           {
+              accepted_properties.push(data[i]);
+          }
+        }
       }
       i += 1;
     }
