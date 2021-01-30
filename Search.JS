@@ -22,6 +22,17 @@ function Search ()
     var name = document.getElementById("Searchbar").value;
     var attrib2 = document.getElementById("Attribute2").value;
     var attrib3 = document.getElementById("Attribute3").checked;
-    data.forEach(Compare(element => dat,index));
+    var i = 0;
+    var i = 0;
+    var accepted_properties =[];
+    while (i < data.length)
+    {
+      if (data[i].Name.includes(name,0))
+      {
+        if(data[i].Attribute2 == attrib2){if (attrib3 == data[i].Attribute3){accepted_properties.push(data[i]);}}
+      }
+      i += 1;
+    }
+    console.log(accepted_properties);
 
 }
