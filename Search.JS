@@ -13,6 +13,20 @@ function OutputResults(results)
   headings[2].appendChild(document.createTextNode("Atribute 2 Value"));
   headings[3].appendChild(document.createTextNode("Atribute 3 Value"));
   table_head.appendChild(headings[0]);table_head.appendChild(headings[1]);table_head.appendChild(headings[2]);table_head.appendChild(headings[3]);
+  for (let RowIndex = 0; RowIndex < results.length; RowIndex++)
+  {
+    var row = document.createElement("tr");
+    var name = document.createElement("td");
+    name.appendChild(document.createTextNode(results[RowIndex].Name));
+    var attrib = document.createElement("td");
+    attrib.appendChild(document.createTextNode(results[RowIndex].Attribute1));
+    var attrib2 = document.createElement("td");
+    attrib2.appendChild(document.createTextNode(results[RowIndex].Attribute2));
+    var attrib3 = document.createElement("td");
+    attrib3.appendChild(document.createTextNode(results[RowIndex].Attribute3));
+    row.appendChild(name);row.appendChild(attrib);row.appendChild(attrib2);row.appendChild(attrib3);
+    results_table.appendChild(row);
+  }
   results_table.id = "Results";
   results_table.appendChild(table_head);
   body.appendChild(results_table);
@@ -22,7 +36,6 @@ function Search ()
     var name = document.getElementById("Searchbar").value;
     var attrib2 = document.getElementById("Attribute2").value;
     var attrib3 = document.getElementById("Attribute3").checked;
-    var i = 0;
     var i = 0;
     var accepted_properties =[];
     while (i < data.length)
@@ -42,6 +55,5 @@ function Search ()
       i += 1;
     }
     OutputResults(accepted_properties);
-    console.log(accepted_properties);
 
 }
