@@ -1,21 +1,21 @@
-function loadFile(filePath) {
-    var result = null;
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", filePath, false);
-    xmlhttp.send();
-    if (xmlhttp.status==200) {
-      result = xmlhttp.responseText;
-    }
-    return result;
-  }
   
-function Compare(item,index)
+function OutputResults(results)
 {
-    var value = data[index].toLowerCase;
-    if(value.includes(name.toLowerCase))
-    {
-        alert(value);
-    }
+  var old_table = document.getElementById("Results");
+  if (old_table != null){old_table.remove();}
+  var body = document.getElementsByTagName('body')[0];
+  var total_results = results.length;
+  var results_table = document.createElement("table");
+  var table_head = document.createElement("thead");
+  var headings = [document.createElement("th"),document.createElement("th"),document.createElement("th"),document.createElement("th")];
+  headings[0].appendChild(document.createTextNode("Name"));
+  headings[1].appendChild(document.createTextNode("Atribute 1 Value"));
+  headings[2].appendChild(document.createTextNode("Atribute 2 Value"));
+  headings[3].appendChild(document.createTextNode("Atribute 3 Value"));
+  table_head.appendChild(headings[0]);table_head.appendChild(headings[1]);table_head.appendChild(headings[2]);table_head.appendChild(headings[3]);
+  results_table.id = "Results";
+  results_table.appendChild(table_head);
+  body.appendChild(results_table);
 }
 function Search ()
 {
@@ -37,9 +37,11 @@ function Search ()
               accepted_properties.push(data[i]);
           }
         }
+
       }
       i += 1;
     }
+    OutputResults(accepted_properties);
     console.log(accepted_properties);
 
 }
