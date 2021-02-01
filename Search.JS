@@ -28,6 +28,7 @@ function OutputResults(results)
     results_table.appendChild(row);
   }
   results_table.id = "Results";
+  results_table.className ="results_table";
   results_table.appendChild(table_head);
   body.appendChild(results_table);
 }
@@ -44,11 +45,11 @@ function Search ()
       {
         if (attrib3 == data[i].Attribute3)
         {
-          if (attrib2 = "All"){accepted_properties.push(data[i]);}
-          if(data[i].Attribute2 == attrib2) 
+          if (attrib2 == "All"){accepted_properties.push(data[i]);}
+            if(data[i].Attribute2 == attrib2) 
            {
               accepted_properties.push(data[i]);
-          }
+           }
         }
 
       }
