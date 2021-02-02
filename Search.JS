@@ -44,8 +44,9 @@ function Comapre(object)
   for (var attribute in object)
   {
     if(wanted_attribute[i] == "All"){wanted_attribute[i] = ""}; //If it says all then replace with balnk (So matches to all filters)
-    var value = object[attribute].toString(); //Checks the objects actual value
-    if (value.includes(wanted_attribute[i].toString(),0)){attributes_matched += 1;} 
+    var value = object[attribute].toString(); //Stores the objects actual value
+    var matches = value.includes(wanted_attribute[i].toString(),0);//if it includes the wanted value
+    if (matches){attributes_matched += 1;} 
     //^If actual value containes wanted attribute value then incremet match counter.
     i+= 1;
   }
