@@ -1,4 +1,4 @@
-var accepted_properties =[]; 
+var accepted_items =[]; 
 function OutputResults(results)
 {
   var old_table = document.getElementById("Results");
@@ -6,20 +6,27 @@ function OutputResults(results)
   var body = document.getElementsByTagName('body')[0];
   var results_table = document.createElement("table");
   var table_head = document.createElement("thead");
-  var headings = [document.createElement("th"),document.createElement("th"),document.createElement("th"),document.createElement("th")];
-  headings[0].appendChild(document.createTextNode("Name"));
-  headings[1].appendChild(document.createTextNode("Atribute 1 Value"));
-  headings[2].appendChild(document.createTextNode("Atribute 2 Value"));
-  headings[3].appendChild(document.createTextNode("Atribute 3 Value"));
+  var headings = [];
+  for (attribute in data[0])
+  {
+    headings.push(document.createElement("th"));
+    headings[headings.length - 1].appendChild(document.createTextNode(attribute.toString()));
+  }
   headings.forEach(item => table_head.appendChild(item));
-  for (let RowIndex = 0; RowIndex < results.length; RowIndex++)
+  var index =  0;
+  while (index < results.length)
   {
     var row = document.createElement("tr");
-    var row_values = [document.createElement("td"),document.createElement("td"),document.createElement("td"),document.createElement("td")];
-    row_values[0].appendChild(document.createTextNode(results[RowIndex].Name));
-    row_values[1].appendChild(document.createTextNode(results[RowIndex].Attribute1));
-    row_values[2].appendChild(document.createTextNode(results[RowIndex].Attribute2));
-    row_values[3].appendChild(document.createTextNode(results[RowIndex].Attribute3));
+    var row_values = [];
+    var k =0;
+    result = results[k];
+    for (attributes in result)
+    {
+      row_values.push(document.createElement("td"));
+      row_values[k].appendChild(document.createTextNode(result[attributes]));
+      k+= 1;
+    }
+    index +=1;
     row_values.forEach(item => row.appendChild(item));
     results_table.appendChild(row);
   }
@@ -40,12 +47,12 @@ function Comapre(object)
     if (value.includes(wanted_attribute[i].toString(),0)){attributes_matched += 1;}
     i+= 1;
   }
-  if(attributes_matched == 3){accepted_properties.push(object);}
+  if(attributes_matched == 3){accepted_items.push(object);}
   
 }
 function Search ()
 {
-    accepted_properties =[];
+    accepted_items =[];
     data.forEach(item => Comapre(item));
-    OutputResults(accepted_properties);
+    OutputResults(accepted_items);
 }
