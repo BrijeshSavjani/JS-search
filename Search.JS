@@ -19,7 +19,7 @@ function OutputResults()
     var row = document.createElement("tr"); //Create row for each accepted item. (While loop so index can be used)
     var row_values = [];//Value from item
     var k =0;
-    result = accepted_items[k]; //Current accepted item
+    result = accepted_items[index]; //Current accepted item
     for (attributes in result)
     {
       row_values.push(document.createElement("td")); //Create value
