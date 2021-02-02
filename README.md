@@ -22,8 +22,9 @@ This is slightly more complicated to do however it is still relatively simple.
   </br>
   <li>The second step is to create a HTML element from which the user can enter their desired attribute value.To do this simpily go into the index.html file and an input to the       SearchBar div. Give this input a sensible id. We will need to fetch the value of this from the JS file later.</li>
   </br>
-  <li>Next navigate to the wanted_attribute list that can be found in the Compare(object) function in the Search.JS file. Add 
-  ```
-  document.getElementById("[your id name here]")
-  ```</li>
+  <li>Next navigate to the wanted_attribute list that can be found in the Compare(object) function in the Search.JS file. Add document.getElementById("[your id name here]"). It   is important that the fetched attributes from the user apear in the same order in the array as they do in the object. I.E) If you add an attribute to the end of the objects     then the document.getElementById("[your id name here]") must be at the end of the wanted_attributes array.
+  </li>
+  </br>
+  <li>Finally you just need to update "if(attributes_matched == 3){accepted_items.push(object);}" in the Comapre(object) function to if(attributes_matched == [amount of attributes]){accepted_items.push(object);}
   </ol>
+<h3> Adding custom filters</h3>
