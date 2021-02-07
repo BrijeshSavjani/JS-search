@@ -28,3 +28,16 @@ This is slightly more complicated to do however it is still relatively simple.
   <li>Finally you just need to update "if(attributes_matched == 3){accepted_items.push(object);}" in the Comapre(object) function to if(attributes_matched == [amount of attributes]){accepted_items.push(object);}
   </ol>
 <h3> Adding custom filters</h3>
+Adding custom filters to the search engine is really easy. Simpily navigate to the Search.JS file then go into the Compare() function. Then modify this for loop to yor hearts content:
+```javascript
+for (var attribute in object)
+ {
+  if(wanted_attribute[i] == "All"){wanted_attribute[i] = ""}; 
+  var value = object[attribute].toString(); 
+  var matches = value.includes(wanted_attribute[i].toString(),0);
+  //Use custom code to change the value matches here.If matches == true then it will match filter
+  if (matches){attributes_matched += 1;} 
+  i+= 1;
+ }
+```
+For clearer commented code please look at the source file.
